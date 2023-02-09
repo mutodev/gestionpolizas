@@ -1,0 +1,272 @@
+    <div class="container">
+      <h1 class="h5 mb-3">
+          Bienvenido
+          <small class="text-muted">{{ auth()->user()->name }}</small>
+      </h1>
+    <div class="row">
+      <div class="col-md-12">
+    
+      
+        <div class="card">
+      
+         
+
+            <div class="card-header card-title">
+              <div class="d-flex align-items-center">
+                <h2 class="mb-0"> AMPAROS SELECCIONADOS PARA LA PÓLIZA </h2>
+           
+              </div>
+            </div>
+          <div class="card-body">
+         
+                   <h5> I. AMPAROS A CONSTITUIR POR PARTE DEL CONTRATISTA O PROVEEDOR SEGÚN APLIQUE EN EL
+            CONTRATO U ORDEN DE COMPRA:</h5>
+            • AMPAROS DE LA PÓLIZA DE CUMPLIMIENTO:
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+               
+                  <th scope="col">CLASE DE RIESGO </th>
+                  <th scope="col">PORCENTAJE
+                    (%)
+                    </th>
+                  <th scope="col">VALOR
+                    ASEGURADO</th>
+                  <th scope="col">VIGENCIA</th>
+                  <th scope="col">IVA</th>
+                    </th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                  setlocale(LC_MONETARY,"de_DE");
+                
+                  
+                
+                  foreach ($datos3 as $id => $dato):?>
+                <tr>
+                @if($dato['tipo_de_poliza'] == 'AMPAROS DE LA PÓLIZA DE CUMPLIMIENTO')   
+            
+                  <th scope="row">
+                  {{$dato['clase_de_riesgo']}}
+                  </th>
+                    <th scope="row">
+                      <input name="{{$dato['id']}}.{{$dato['porcentaje_amparo']}}" type="text" value="{{$dato['porcentaje_amparo']}}" class="form-control>
+                     
+                      
+                    </th>
+                  
+
+                      
+                      <th scope="row">
+                          
+                        <textarea class="form-control  name="{{$dato['id']}}._vigencia" id="vigencia" cols="50" rows="5">{{$dato['vigencia']}}
+                        </textarea>
+                    
+                        </th>
+                     
+                        <th scope="row">
+                          {{$dato['valor_asegurado']}}
+                          </th>
+
+                          <th scope="row">
+                            
+                          @if ($dato['iva']== 1)
+                                Si
+                              @else
+                                 No
+                          @endif
+ 
+                            </th>
+                        @endif
+                        
+                            </tr>
+
+
+
+                <?php endforeach ?>
+              </tbody>
+            </table> 
+                  </div>
+            <div class="card-body">
+            <table class="table table-striped table-hover">
+            <h5> II. AMPAROS DE LA PÓLIZA DE RESPONSABILIDAD CIVIL EXTRACONTRACTUAL:
+              <thead>
+                <tr>
+                
+                  <th scope="col">CLASE DE RIESGO </th>
+                  <th scope="col">PORCENTAJE
+                    (%)
+                    </th>
+                  <th scope="col">VALOR
+                    ASEGURADO</th>
+                  <th scope="col">VIGENCIA</th>
+               
+                    </th>
+                </tr>
+              </thead>
+
+
+              <tbody>
+                <?php
+                  setlocale(LC_MONETARY,"de_DE");
+                
+                  
+                
+                  foreach ($datos3 as $id => $dato):?>
+                <tr>
+                  @if($dato['tipo_de_poliza'] == 'RESPONSABILIDAD CIVIL EXTRACONTRACTUA') 
+            
+                  <th scope="row">
+                  {{$dato['clase_de_riesgo']}}
+                  </th>
+                    <th scope="row">
+                      {{$dato['porcentaje_amparo']}}
+                      
+                    </th>
+                 
+                      <th scope="row">
+                     
+
+
+                      <input name="valor_asegurado" type="text" value=" {{$dato['valor_asegurado']}}" class="form-control {{ $errors->has('valor_asegurado') ? 'error' : '' }}">
+                      
+                      @if ($errors->has('valor_asegurado'))
+                        <div class="error">
+                            {{ $errors->first('valor_asegurado') }}
+                        </div>
+                        @endif
+                      </th>
+
+                      
+                      <th scope="row">
+                          
+                        <textarea class="form-control {{ $errors->has('vigencia') ? 'error' : '' }}" name="vigencia" id="vigencia" cols="50" rows="5">{{$dato['vigencia']}}
+                        </textarea>
+                    
+                        
+                        </th>
+
+                   
+                        <th scope="row">
+                          {{$dato['iva']}}
+                          </th>
+                            </tr>
+
+                            @endif
+                            
+                <?php endforeach ?>
+              </tbody>
+            </table> 
+            </div>
+            <div class="card-body">
+            <table class="table table-striped table-hover">
+            <h5> III. AMPAROS DE LA PÓLIZA DE SERIEDAD DE OFERTA :
+              <thead>
+                <tr>
+                
+                  <th scope="col">CLASE DE RIESGO </th>
+                  <th scope="col">PORCENTAJE
+                    (%)
+                    </th>
+                  <th scope="col">VALOR
+                    ASEGURADO</th>
+                  <th scope="col">VIGENCIA</th>
+               
+                    </th>
+                </tr>
+              </thead>
+
+              
+              <tbody>
+                <?php
+                  setlocale(LC_MONETARY,"de_DE");
+                
+                  
+                
+                  foreach ($datos3 as $id => $dato):?>
+                <tr>
+                  @if($dato['tipo_de_poliza'] == 'SERIEDAD DE OFERTA') 
+               
+                  <th scope="row">
+                  {{$dato['clase_de_riesgo']}}
+                  </th>
+                    <th scope="row">
+                      <input type="text" class="form-control name="porcentaje_amparo" id="porcentaje_amparo.{{$dato['id']}}"" value="
+                    {{$dato['porcentaje_amparo']}}">
+                      
+                    </th>
+                 
+                      <th scope="row">
+                     {{$dato['valor_asegurado']}}
+                    
+                      </th>
+
+                      
+                      <th scope="row">
+                        <textarea class="form-control {{ $errors->has('vigencia') ? 'error' : '' }}" name="vigencia" id="vigencia" cols="50" rows="5">{{$dato['vigencia']}}
+                        </textarea>
+                    
+                        
+                        </th>
+
+                   
+                        <th scope="row">
+
+                          {{$dato['iva']}}
+
+                          </th>
+                            </tr>
+
+                            @endif
+                            
+                <?php endforeach ?>
+              </tbody>
+            </table> 
+
+
+
+
+
+                <div class="card-header card-title">
+              <strong>Datos de las Aseguradora Disponibles </strong>
+            </div>           
+            <div class="card-body">
+
+             
+   
+        
+
+  
+        
+          
+
+
+      </div>
+  
+               
+      </div>
+    </div>
+  </div>
+               
+              
+
+
+                
+
+          
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+            <input type="submit" name="send" value="Enviar" class="btn btn-outline-secondary">

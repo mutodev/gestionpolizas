@@ -1,0 +1,486 @@
+
+<div style="page-break-after:always;"></div>
+<div class=" col-2 ">
+<div style="page-break-after:always;"></div>
+<div class="row">
+
+  <div class=" col-2 ">
+    <h2 class="mb-0">1</div>
+</div>
+<div class=" col-2 ">
+  <h2 class="mb-0">2</div>
+</div>
+<div class=" col-2 ">
+  <h2 class="mb-0">3</div>
+</div>
+  </div>
+  <div>
+ 
+<div style="page-break-after:always;"></div>
+
+<div class="card">
+  <div class="card-header card-title">
+    <div class="d-flex align-items-center">
+      <h2 class="mb-2">VERIFICACIÓN Y APROBACION DE POLIZAS O GARANTÍAS</h2>
+      
+    </div>
+  </div>
+  <div class="card-body">
+  
+
+        <div class=" col-2 "><h2 class="mb-2">DATOS DE LA APROBACIÓN DE LA PÓLIZA</h2></div>  
+        <div class=" col-2 "><h2 class="mb-2">DOCUMENTO Nº: 060122 </h2></div>  
+        <div class="col-2 "><h2 class="mb-2">FECHA DOCUMENTO: 06 de enero de 2022.</h2></div>  
+       
+      </div> 
+
+</div>  
+</div>  
+
+
+
+<div style="page-break-after:always;"></div>
+
+<div class="card">
+     
+       
+     <div class="card-header card-title">
+       <div class="d-flex align-items-center">
+         <h2 class="mb-2">VERIFICACIÓN Y APROBACION DE POLIZAS O GARANTÍAS</h2>
+         
+       </div>
+     </div>
+     </div>
+
+
+  
+        <table border="1" class="table table-bordered">
+        <div class="card">
+     
+       
+     <div class="card-header card-title">
+       <div class="d-flex align-items-center">
+         <h2 class="mb-2">DATOS DE LA APROBACIÓN DE LA PÓLIZA</h2>
+         
+       </div>
+     </div>
+     </div>
+        <table class="table table-bordered">
+        
+        <tr>
+            <td class="tdSubtitle" >DOCUMENTO Nº: 060122 </td>
+            <td  class="tdSubtitle">FECHA DOCUMENTO: 06 de enero de 2022.</td>
+            
+        </tr>
+        </table>
+        <div class="card">
+     
+       
+     <div class="card-header card-title">
+       <div class="d-flex align-items-center">
+         <h2 class="mb-2">DATOS DEL NEGOCIO JURÍDICO</h2>
+         
+       </div>
+     </div>
+     </div>
+     <table class="table table-bordered">
+        <tr>
+            <td  class="tdSubtitle">TIPO: CONTRATO <input disabled type="checkbox" name="colors" value="blue" />ORDEN DE COMPRA <input disabled type="checkbox" name="colors" value="blue" checked="yes" /> ORDEN DE SERVICIO <input disabled type="checkbox" name="colors" value="blue"  /> </td>
+            <td  class="tdSubtitle">NUMERO: 41044300</td>
+            
+        </tr>
+        <tr>
+            <td  class="tdSubtitle">FECHA: 30 de diciembre del 2021  </td>
+            <td  class="tdSubtitle">VALOR: $ 57.740.327</td>
+            
+        </tr>
+        </table>
+        <div class="card">
+     
+       
+     <div class="card-header card-title">
+       <div class="d-flex align-items-center">
+         <h2 class="mb-2">DATOS DEL PROVEEDOR O CONTRATISTA</h2>
+         
+       </div>
+     </div>
+     </div>
+        
+        <table class="table table-bordered">
+        <tr>
+            <td  class="tdSubtitle" >NOMBRE: INGENIERIA DEL CARIBE S.A.S.   </td>
+            <td  class="tdSubtitle">Nº DE IDENTIFICACIÓN: 8060106758 </td>
+            <td  class="tdSubtitle">TIPO DE IDENTIFICACIÓN: CC<input disabled type="checkbox" name="colors" value="blue"  /> NIT <input disabled type="checkbox" name="colors" value="blue" checked="yes" /> CE <input disabled type="checkbox" name="colors" value="blue" /></td>
+            
+        </tr>
+        </table>
+        <div class="card">
+     
+       
+     <div class="card-header card-title">
+       <div class="d-flex align-items-center">
+         <h2 class="mb-2">DATOS DE LA PÓLIZA DE SEGURO DE CUMPLIMIENTO</h2>
+         
+       </div>
+     </div>
+     </div>
+      
+        <table class="table table-bordered">
+        <?php
+                    setlocale(LC_MONETARY,"de_DE");
+                  
+                    
+                  
+foreach ($Aseguradora as $id => $dato):?>
+        <tr>
+            <td  class="tdSubtitle">PÓLIZA CUMPLIMIENTO Nº. {{$dato['nit']}} </td>
+            <td  class="tdSubtitle">{{$dato['tipo_aseguradora']}}</td>
+            <td  class="tdSubtitle">FECHA EXPEDICIÓN: 05/01/2022</td>
+            
+        </tr>
+        <tr>
+            <td  class="tdSubtitle">LUGAR DE EXPEDICIÓN: {{$dato['direccion_entidad']}} </td>
+            <td  class="tdSubtitle">TOMADOR:{{$dato['name1']}} </td>
+            <td  class="tdSubtitle">BENEFICIARIO / ASEGURADO: COTECMAR </td>
+            
+        </tr>
+        <?php endforeach ?>
+
+        </table>
+        <div class="card">
+     
+       
+     <div class="card-header card-title">
+       <div class="d-flex align-items-center">
+         <h2 class="mb-2">AMPAROS SOLICITADOS EN EL NEGOCIO JURÍDICO (SEÑALADOS CON CHULO):</h2>
+         
+       </div>
+     </div>
+     </div>
+     
+        <table class="table table-bordered">
+        <tr>
+            <td  class="tdSubtitle2" > <u>SERIEDAD DE LA OFERTA  <input disabled type="checkbox" name="colors" value="blue"  /> </u>   <br>
+            <u>CUMPLIMIENTO   <input disabled type="checkbox" name="colors" value="blue" checked="yes" /> </u> <br>
+            <u>ANTICIPO  <input disabled type="checkbox" name="colors" value="blue" /></u>   <br>
+            <u>PAGO ANTICIPADO   <input disabled type="checkbox" name="colors" value="blue" checked="yes" /> </u> <br>
+            <u>CALIDAD / CORRECTO FUNCIONAMIENTO DE LOS BIENES   <input disabled type="checkbox" name="colors" value="blue"/> </u>
+
+ </td>
+            <td  class="tdSubtitle2">
+              <u>CALIDAD DEL SERVICIO  <input disabled type="checkbox" name="colors" value="blue"  /> </u> <br>
+              <u>ESTABILIDAD DE LA OBRA  <input disabled type="checkbox" name="colors" value="blue"  /> </u> <br>
+              <u>SALARIOS, PRESTACIONES SOCIALES E INDEMNIZACIONES  <input disabled type="checkbox" name="colors" value="blue" checked="yes" /> </u> <br>
+              <u>SUMINISTRO DE REPUESTOS Y/O ACCESORIOS  <input disabled type="checkbox" name="colors" value="blue" /> </u> <br>
+              <u>RESPONSABILIDAD CIVIL EXTRACONTRACTUAL  <input disabled type="checkbox" name="colors" value="blue" checked="yes" /> </u>
+
+
+
+</td>
+            
+        </tr>
+        </table>
+        <table class="table table-bordered">
+        <tr>
+            <td  class="tdSubtitle" >VIGENCIAS DEBIDAMENTE CONSTITUIDAS: SI<input disabled type="checkbox" name="colors" value="blue" checked="yes" /> NO <input disabled type="checkbox" name="colors" value="blue"  /> </td>
+            <td  class="tdSubtitle">PÓLIZA APROBADA: SI<input disabled type="checkbox" name="colors" value="blue" checked="yes" /> NO <input disabled type="checkbox" name="colors" value="blue"  /></td>
+       
+            
+        </tr>
+        </table>
+        <div style="page-break-after:always;"></div>
+        <div class="card">
+     <div class="card-header card-title">
+       <div class="d-flex align-items-center">
+         <h2 class="mb-2">CAUSALES DE NO APROBACIÓN (SEÑALADOS CON CHULO): N/A</h2>
+         
+       </div>
+     </div>
+     </div>
+     
+        <table class="table table-bordered">
+        <tr>
+            <td  class="tdSubtitle2"> <u>INDEBIDA PAPELERÍA (A FAVOR DE ENTIDAD ESTATAL)  <input disabled type="checkbox" name="colors" value="blue"  /></u>  <br>
+            <u>INDEBIDA IDENTIFICACIÓN DE LAS PARTES  <input disabled type="checkbox" name="colors" value="blue"  /></u> <br>
+            <u>OBJETO DEL SEGURO ERRADO  <input disabled type="checkbox" name="colors" value="blue"  /></u><br>
+            <u>VIGENCIAS ERRADAS  <input disabled type="checkbox" name="colors" value="blue" /></u><br>
+            <u>SUMAS ASEGURADAS ERRADAS  <input disabled type="checkbox" name="colors" value="blue"  /></u>
+
+ </td>
+            <td  class="tdSubtitle2">
+              <u>INDEBIDA IDENTIFICACIÓN DE LOS AMPAROS  <input disabled type="checkbox" name="colors" value="blue"  /> </u> <br>
+              <u>PÓLIZA SIN FIRMAR POR TOMADOR   <input disabled type="checkbox" name="colors" value="blue" /></u> <br>
+              <u>AMPARO DE CALIDAD SIN INDICAR QUE INICIA DESDE LA
+FINALIZACIÓN DE LOS TRABAJOS O ENTREGA DEL BIEN   <input disabled type="checkbox" name="colors" value="blue"  /></u> <br>
+              <u>AMPARO DE ESTABILIDAD SIN INDICAR QUE INICIA DESDE LA
+FINALIZACIÓN DE LOS TRABAJOS  <input disabled type="checkbox" name="colors" value="blue"  /></u> <br>
+          
+
+
+</td>
+</tr>
+</table>
+<table class="table table-bordered">
+<tr>
+            <td  class="tdSubtitle">NOTAS U OBSERVACIONES</td>
+            <td></td>
+       
+            
+        </tr>
+     
+        </table>
+        <div class="clsfirma">
+        <img class="firma" src="{{public_path($firma_seleccionada)}}" alt="Logo" height="75px">
+    
+        </div>
+        <div class="clsfirma">    <?php
+                    setlocale(LC_MONETARY,"de_DE");
+                  
+                    
+                  
+foreach ($gestor as $id => $dato):?>
+<span class="subtitle">{{$dato}}</span>
+<?php endforeach ?>
+</div>
+    
+        </table>
+
+
+
+  
+    
+ 
+
+  
+   
+
+
+
+
+
+    <!--
+  
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        @foreach($users as $user)
+        <tr>
+            <td>{{ $user->id }}</td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->email }}</td>
+        </tr>
+        @endforeach
+
+
+
+      <p>{{ $date }}</p>
+    </table>
+  -->
+
+
+
+
+
+section{
+
+  max-width: 800px;
+text-align: center;
+align-items: center;
+vertical-align: middle;
+min-height: 90px;
+margin-top: 2%;
+margin-bottom: 2%;
+}
+table
+{
+  text-align:center;
+}
+
+
+.firma{
+  text-align:center;
+}
+.clsfirma{
+  text-align:center;
+}
+.grid-container {
+  display: grid;
+  gap: 50px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+ 
+  font-size: 30px;
+  text-align: center;
+  max-width:30%;
+  float: left;
+  display: inline-grid;
+  position: absolute;
+}
+
+.col-1 {
+  width:10%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+
+  float: left;
+  display: inline-block;
+  position: absolute;
+}
+.col-2 {width: 20%;
+
+  border: 1px solid rgba(0, 0, 0, 0.8);
+
+  font-size: 30px;
+  text-align: center;
+  padding-top: 2%;
+  float: left;
+
+height: 120px;
+
+
+}
+.col-3 {width: 25%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+
+  font-size: 30px;
+  text-align: center;
+
+  float: left;
+  display: inline-block;
+  position: absolute;}
+.col-4 {width: 33.33%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+
+  float: left;
+  display: inline-block;
+  position: absolute;}
+.col-5 {width: 41.66%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+
+  float: left;
+  display: inline-block;
+  position: absolute;}
+.col-6 {width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+
+  float: left;
+  display: inline-block;
+  position: absolute;}
+.col-7 {width: 58.33%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  height: 50px;
+  float: left;
+  display: inline-block;
+  position: absolute;}
+.col-8 {width: 66.66%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+
+  float: left;
+  display: inline-block;
+  position: absolute;}
+.col-9 {width: 80%;
+  height: 120px;
+
+  font-size: 30px;
+  text-align: center;
+
+  float: left;
+
+  border: 1px solid rgba(0, 0, 0, 0.8);
+
+
+}
+.col-10 {width: 83.33%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+
+  float: left;
+  display: inline-block;
+  position: absolute;}
+.col-11 {width: 91.66%;
+
+  background-color: rgba(255, 255, 255, 0.8);
+ /* border: 1px solid rgba(0, 0, 0, 0.8);*/
+ border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+  text-align: center;
+  height: 120px;
+
+}
+.col-12 {
+
+  width: 100%;
+
+padding-top: 2%;
+border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+  text-align: center;
+
+  height: 120px;
+}
+.mb-0{
+  font-weight:bold;
+  text-align:center;
+  font-size:17px;
+
+}
+
+.mb-2{
+  font-weight:bold;
+  text-align:center;
+  font-size:14px;
+
+}
+
+
+.tdSubtitle{
+  font-size:10px;
+  }
+
+  .tdSubtitle2{
+  font-size:10px;
+  }
+  
+ .card{
+  display:inline;
+ }
