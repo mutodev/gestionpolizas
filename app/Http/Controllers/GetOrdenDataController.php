@@ -23,12 +23,9 @@ class GetOrdenDataController extends Controller
     public function GetOrderData(Request $request)
 
     {
-     
-
-      
+           
         $value = $request->order_number;
         $orden = Ordenes::whereIn('order_number', array( $value ))->get()->toArray();
-
 
 
         $this->validate($request, [

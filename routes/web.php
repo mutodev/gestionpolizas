@@ -40,7 +40,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
  
 
-
     Route::get('send-mail', [MailController::class, 'index']);
  
 

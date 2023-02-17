@@ -178,9 +178,6 @@ if($firma){
 
         }else{
 
-
-
-
             return back()->with('error_exist', 'Cargar Firma!');
         }
 

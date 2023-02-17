@@ -11,9 +11,9 @@
     <!-- Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href=" {{ asset('/css/bootstrap.min.css ') }}" rel="stylesheet">
-    <link href=" {{ asset('/css/custom.css') }}" rel="stylesheet">
-  </head>
+    <link href="{{ asset('/css/bootstrap.min.css ') }}" rel="stylesheet">
+    <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
+    </head>
   <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -27,24 +27,14 @@
 
         <!-- /.navbar-header -->
         <div class="collapse navbar-collapse" id="navbar-toggler">
-          <!--ul class="navbar-nav">
-            <li class="nav-item"><a href="#" class="nav-link">Companies</a></li>
-            <li class="nav-item active"><a href="#" class="nav-link">Contacts</a></li>
-          </ul-->
-
           <ul class="navbar-nav ml-auto">
-
             @guest
-
-
           <li class="nav-item mr-2"><a href="{{ route('login') }}" class="btn btn-outline-secondary">Login</a></li>
-
-
             @endguest
             @if(Auth::check())
         <div>
           <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-         @csrf
+            @csrf
             <button class="btn btn-dark ">Logout</button>
           </form>
         </div>
