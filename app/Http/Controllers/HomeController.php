@@ -92,16 +92,18 @@ class HomeController extends Controller
         if (count($datos1) > 0) {
 
             $ordenes = Ordenes::whereIn('id',  $datos1 )->get()->toQuery()->orderBy('created_at', 'DESC')->paginate(100);
+
             $datos3=Ordenes::whereIn('id',  $datos1 )->get()->toArray();
         }else{
 
             $datos3 = Ordenes::all();
 
-            if( $datos3->first()){
+            $ordenes = null; // Definir lista de orndenes en 0
 
-            
-            $ordenes = Ordenes::get()->toQuery()->orderBy('created_at', 'DESC')->paginate(100);}
-            
+            /*
+            if( $datos3->first()){
+            $ordenes = Ordenes::get()->toQuery()->orderBy('created_at', 'DESC')->paginate(100);}*/
+
 
         }
 
@@ -131,7 +133,7 @@ class HomeController extends Controller
           //  dd($ordenes_creadas);
 
             $ordenes = Ordenes::whereIn('id',  $ordenes_creadas )->orderBy('created_at', 'DESC')->paginate(100);
-           
+
         }
 
 
@@ -515,7 +517,7 @@ class HomeController extends Controller
         }
 
 
-  
+
         $data = [
             'Aseguradoras' => $datos2,
             'Polizas_Tramitadas' => count($datos3),
@@ -564,14 +566,14 @@ class HomeController extends Controller
                                  ->orWhere('order_number', 'LIKE',"%{$search}%")
                                  ->orWhere('order_email', 'LIKE',"%{$search}%");
                          })->paginate(100);
-    
+
             // dd($datos2);
                 }else{
                     $datos2 = null;
 
                 }
-            
-               
+
+
                // $datos2 = Ordenes::all()->sortByDesc("created_at")->toQuery()->orderBy('created_at','DESC')->paginate(1);
                // $datos2 = Ordenes::whereIn('owner_id', array($user_id))->get()->toQuery()->orderBy('created_at','DESC')->paginate(100);
                }else{
@@ -601,16 +603,16 @@ class HomeController extends Controller
             }else{
                 $datos2 = null;
             }
-           
+
             // dd($datos2);
         }
 
         if ($roles[0] == "Adquisiciones") {
-          
-          
+
+
             if ($search = request()->query('search')) {
 
-            
+
                 $datos2 = Ordenes::whereIn('owner_id', array($user_id))->where(
                     function($query)use ($search) {
                       return $query
@@ -635,12 +637,12 @@ class HomeController extends Controller
                 }
 
 
-                
+
                }
 
-          
 
-           
+
+
 
         }
 
@@ -651,10 +653,10 @@ class HomeController extends Controller
             if (count($datos1) > 0) {
 
 
-                
+
             if ($search = request()->query('search')) {
 
-            
+
                 $datos2 = Ordenes::whereIn('id', $datos1)->where(
                     function($query)use ($search) {
                       return $query
@@ -706,11 +708,11 @@ class HomeController extends Controller
 
 
         if (isset($datos2)) {
-         
+
             $t = 0;
             foreach ($datos2 as &$value) {
-           
-             
+
+
                 $secondDate = new DateTime(date("Y-m-d H:i:s"));
                 $firstDate = new DateTime($value['poliza_end']);
 
@@ -769,7 +771,7 @@ class HomeController extends Controller
             }
 
         }
-       
+
         return view('home_list', compact('roles', 'datos2'));
 
     }
