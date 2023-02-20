@@ -95,7 +95,7 @@ class HomeController extends Controller
 
             $datos3=Ordenes::whereIn('id',  $datos1 )->get()->toArray();
         }else{
-, asignado
+
             $datos3 = Ordenes::all();
 
             $ordenes = null; // Definir lista de orndenes en 0
