@@ -92,17 +92,18 @@ class HomeController extends Controller
         if (count($datos1) > 0) {
 
             $ordenes = Ordenes::whereIn('id',  $datos1 )->get()->toQuery()->orderBy('created_at', 'DESC')->paginate(10);
-
             $datos3=Ordenes::whereIn('id',  $datos1 )->get()->toArray();
         }else{
 
             $datos3 = Ordenes::all();
 
-            $ordenes = null; // Definir lista de orndenes en 0
-
-            /*
             if( $datos3->first()){
-            $ordenes = Ordenes::get()->toQuery()->orderBy('created_at', 'DESC')->paginate(100);}*/
+
+                if ($roles == "Contratos") {
+            $ordenes = Ordenes::get()->toQuery()->orderBy('created_at', 'DESC')->paginate(10);}
+
+        }
+
 
         }
 
@@ -203,6 +204,10 @@ class HomeController extends Controller
                 }
             }
 
+
+
+
+
             if ($roles == "Interesado") {
 //listar las asignadas
 
@@ -210,6 +215,8 @@ class HomeController extends Controller
                     $collection_Cerradas = $collection_Cerradas + 1;
 
                 }
+
+
             }
 
             if ($roles == "Invitado") {
@@ -566,21 +573,19 @@ class HomeController extends Controller
                                  ->orWhere('order_email', 'LIKE',"%{$search}%");
                          })->paginate(10);
 
-            // dd($datos2);
                 }else{
                     $datos2 = null;
 
                 }
 
 
-               // $datos2 = Ordenes::all()->sortByDesc("created_at")->toQuery()->orderBy('created_at','DESC')->paginate(1);
-               // $datos2 = Ordenes::whereIn('owner_id', array($user_id))->get()->toQuery()->orderBy('created_at','DESC')->paginate(100);
+
                }else{
 
                 $datos2 = Ordenes::all();
                 if($datos2->first()){
             $datos2 = Ordenes::get()->toQuery()->orderBy('created_at', $order)->paginate(10);
-            // dd($datos2);
+
                 }else{
                     $datos2 = null;
 
@@ -608,7 +613,7 @@ class HomeController extends Controller
 
         if ($roles[0] == "Adquisiciones") {
 
-
+//dd($user_id );
             if ($search = request()->query('search')) {
 
 
@@ -621,15 +626,16 @@ class HomeController extends Controller
                      })
                      ->get()->toQuery()->orderBy('created_at', $order)->paginate(10);
 
-               // $datos2 = Ordenes::all()->sortByDesc("created_at")->toQuery()->orderBy('created_at','DESC')->paginate(1);
-               // $datos2 = Ordenes::whereIn('owner_id', array($user_id))->get()->toQuery()->orderBy('created_at','DESC')->paginate(100);
+
                }else{
 
-
-           $datos2 = Ordenes::all();
+           $datos2 =  Ordenes::whereIn('owner_id', array($user_id))->get();
+          // dd( $datos2 );
                 if($datos2->first()){
-            $datos2 = Ordenes::get()->toQuery()->orderBy('created_at', $order)->paginate(10);
-            // dd($datos2);
+
+
+                    $datos2 = Ordenes::whereIn('owner_id', array($user_id))->get()->toQuery()->orderBy('created_at', $order)->paginate(10);
+                    //dd( $datos2);
                 }else{
                     $datos2 = null;
 
@@ -665,8 +671,6 @@ class HomeController extends Controller
                      })
                      ->get()->toQuery()->orderBy('created_at', $order)->paginate(10);
 
-               // $datos2 = Ordenes::all()->sortByDesc("created_at")->toQuery()->orderBy('created_at','DESC')->paginate(1);
-               // $datos2 = Ordenes::whereIn('owner_id', array($user_id))->get()->toQuery()->orderBy('created_at','DESC')->paginate(100);
                }else{
 
                 $datos2 = Ordenes::whereIn('id', $datos1)->paginate(10);
@@ -770,6 +774,7 @@ class HomeController extends Controller
             }
 
         }
+
 
         return view('home_list', compact('roles', 'datos2'));
 
