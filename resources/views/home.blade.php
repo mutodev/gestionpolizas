@@ -20,13 +20,13 @@
 
                     @role('Adquisiciones')
                     <a href="{{route('crear')}}" class="btn btn-success" title="Agregar Ordenes | Admin"><i class="fa fa-plus-circle"></i> Agregar</a>
-                   
+
                     @endrole
                     @role('Contratos')
-        
+
                     <a href="{{route('crear_contrato')}}"   class="btn btn-outline-secondary"title="Crear Contrato">  Crear Contrato </a>
-             
-              
+
+
                     @endrole
 
                     @role('Admin')
@@ -199,17 +199,18 @@
 
 
 @endif
-{{ $data['Interesado']->links() }}
+
           <?php endforeach ?>
 
-      
+
 
 
                             </tbody>
                             @endif
                         </table>
-
-   
+@if($data)
+{{ $data['Interesado']->links() }}
+@endif
                     </div>
                 </div>
             </div>

@@ -34,7 +34,7 @@
                 <div class="d-flex align-items-center">
                   <h2 class="mb-0">Polizas en Gestión</h2>
                   <div class="ml-auto">
-                
+
                   <a href="{{route('home')}}" class="btn btn-sm btn-circle btn-success" title="Inicio">@include('iconos.home')</a>
 
      @role('Contratos')
@@ -258,10 +258,6 @@ CERRADO
            </td>
 
           </tr>
-
-
-
-
 
           <?php endforeach ?>
      @endif
@@ -543,7 +539,7 @@ CERRADO
 
       </tr>
 
-      {{ $datos2->links() }}
+
       <?php endforeach ?>
  @endif
       @endrole
@@ -551,8 +547,9 @@ CERRADO
 
                 </tbody>
               </table>
-
-            
+@if($datos2)
+  {{ $datos2->links() }}
+@endif
             </div>
           </div>
         </div>
