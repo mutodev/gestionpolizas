@@ -268,7 +268,7 @@ CERRADO
           <?php
           setlocale(LC_MONETARY,"de_DE");
           foreach ($datos2 as $id => $dato):?>
- @if($dato['elaboracion'] == 1 )
+ @if($dato['elaboracion'] == 1 || $dato['order_tipo'] == "contrato" )
            <tr >
 
           <th scope="row"><p>{{$dato['order_number']}}</th>
@@ -547,7 +547,7 @@ CERRADO
 
                 </tbody>
               </table>
-@if($datos2)
+@if($datos2  != null)
   {{ $datos2->links() }}
 @endif
             </div>

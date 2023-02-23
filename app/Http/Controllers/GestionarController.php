@@ -41,10 +41,10 @@ class GestionarController extends Controller
 
 
         $orden = Ordenes::whereIn('order_number', array($orden_number))->get()->toArray();
-    
+
         $order_id = $orden[0]['id'];
-     
-       
+
+
 
       if( Coberturas_Seleccionadas::whereIn('order_id', array( $order_id))->get()->first()){
 
@@ -149,7 +149,7 @@ return back()->with('success', 'Hemos registrado comentario de orden para gestiÃ
    $orden = Ordenes::whereIn('order_number', array($orden_number))->get()->toArray();
 
         $order_id = $orden[0]['id'];
-       
+
 
 
       $request->validate([         'email_interesado' => 'required|email'     ]);
@@ -199,7 +199,7 @@ $request->merge(['user_id'=> $user->id]);
 $user->notify(new EmailNotification($mailData));
 
 }else{
- 
+
     $request->merge(['user_id'=> $user_exist->id]);
 
     //if email exist

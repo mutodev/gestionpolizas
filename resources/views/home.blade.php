@@ -208,7 +208,7 @@
                             </tbody>
                             @endif
                         </table>
-@if($data)
+@if($data['Interesado'] != null)
 {{ $data['Interesado']->links() }}
 @endif
                     </div>
